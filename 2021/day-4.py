@@ -42,7 +42,7 @@ class Bingo:
 def main():
     p1_score, p2_score = None, None
 
-    with open('2021/4/input.txt', 'r') as f:
+    with open('2021/input/4.txt', 'r') as f:
         lines = list(map(lambda l: l.strip(), f.readlines()))
     numbers, board_defs = lines[0], lines[2:]
 

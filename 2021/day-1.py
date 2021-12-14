@@ -9,7 +9,7 @@ def calc(measurements, window_size):
 
 
 def main():
-  with open('2021/1/input.txt', 'r') as f:
+  with open('2021/input/1.txt', 'r') as f:
     measurements = f.readlines()
 
   p1_ans = calc(measurements, 1)

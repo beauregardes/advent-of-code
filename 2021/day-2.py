@@ -1,7 +1,7 @@
 def main():
   p1_pos, p2_pos = [0, 0], [0, 0, 0]
 
-  with open('2021/2/input.txt', 'r') as f:
+  with open('2021/input/2.txt', 'r') as f:
     movements = f.readlines()
 
   # P1

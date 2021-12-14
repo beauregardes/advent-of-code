@@ -45,7 +45,7 @@ def calc_life_support_rating(readings):
   return oxygen_generator_readings[0] * co2_scrubber_readings[0]
 
 def main():
-  with open('2021/3/input.txt', 'r') as f:
+  with open('2021/input/3.txt', 'r') as f:
     readings = f.readlines()
 
   power_consumption = calc_power_consumption(readings)
