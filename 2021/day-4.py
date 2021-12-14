@@ -1,9 +1,12 @@
+import time
+
+
 class Bingo:
     def __init__(self, grid):
         self.grid = list(map(lambda l: list(map(int, l.split())), grid))
-        self.marks = [[False for _ in range(len(self.grid[r]))] 
+        self.marks = [[False for _ in range(len(self.grid[r]))]
                       for r in range(len(self.grid))]
-        
+
         self.lookup = {}
         for r in range(len(self.grid)):
             for c in range(len(self.grid[r])):
@@ -29,7 +32,7 @@ class Bingo:
         # True and N returns N
         # False and N returns 0
         # We want all the False ones, so invert the boolean
-        return sum(not self.marks[r][c] and self.grid[r][c] 
+        return sum(not self.marks[r][c] and self.grid[r][c]
                    for r in range(len(self.marks))
                    for c in range(len(self.marks[r])))
 
@@ -48,7 +51,7 @@ def main():
 
     numbers = list(map(int, numbers.split(',')))
 
-    boards = [Bingo(board_defs[(i*5)+i:(i*5)+i+5]) 
+    boards = [Bingo(board_defs[(i*5)+i:(i*5)+i+5])
               for i in range(board_defs.count('')+1)]
 
     wins = [False] * len(boards)
@@ -58,7 +61,7 @@ def main():
 
             last_win = wins[i]
             wins[i] = b.check_win()
-            
+
             # If we haven't had a p1_score before, this is the first win
             if p1_score == None and wins[i]:
                 p1_score = n * b.score()
@@ -74,8 +77,13 @@ def main():
 
     return p1_score, p2_score
 
-if __name__ == '__main__':
-    p1_score, p2_score = main()
 
-    print(f"P1: {p1_score}")
-    print(f"P2: {p2_score}")
+if __name__ == '__main__':
+    t1 = time.time()
+    p1_score, p2_score = main()
+    t2 = time.time()
+
+    print(f"P1: {p1_score}")  # => 38913
+    print(f"P2: {p2_score}")  # => 16836
+
+    print(f"Took {t2 - t1}s")

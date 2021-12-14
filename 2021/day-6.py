@@ -34,4 +34,5 @@ if __name__ == '__main__':
 
     print(f"P1: {p1_ans}")  # => 365862
     print(f"P2: {p2_ans}")  # => 1653250886439
-    print(f"Took {t2 - t1}s") 
+
+    print(f"Took {t2 - t1}s")
