@@ -1,5 +1,6 @@
 import time
 
+# Reference for the slot numbers used for decode_number:
 #
 #   00000
 #  5     1
