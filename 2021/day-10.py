@@ -45,6 +45,6 @@ if __name__ == '__main__':
     t2 = time.time()
 
     print(f"P1: {p1_ans}")  # => 469755
-    print(f"P2: {p2_ans}")  # => 
+    print(f"P2: {p2_ans}")  # => 2762335572
 
     print(f"Took {t2 - t1}s")
