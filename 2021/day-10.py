@@ -15,29 +15,30 @@ def main():
 
     open_stack = deque()
     for l in lines:
-      open_stack.clear()
-      corrupted = False
+        open_stack.clear()
+        corrupted = False
 
-      counts = {'(': 0, '[': 0, '{': 0, '<': 0}
-      for c in l:
-        if c in counts.keys():
-          open_stack.append(c)
-        elif c in open_pair.keys():
-          if open_stack[-1] != open_pair[c]:
-            p1_ans += error_score[c]
-            corrupted = True
-            break
-          else:
-            open_stack.pop()
+        counts = {'(': 0, '[': 0, '{': 0, '<': 0}
+        for c in l:
+            if c in counts.keys():
+                open_stack.append(c)
+            elif c in open_pair.keys():
+                if open_stack[-1] != open_pair[c]:
+                    p1_ans += error_score[c]
+                    corrupted = True
+                    break
+                else:
+                    open_stack.pop()
 
-      if not corrupted and len(open_stack) > 0:
-        p2_scores.append(0)
-        while len(open_stack) > 0:
-          c = open_stack.pop()
-          p2_scores[-1] *= 5
-          p2_scores[-1] += complete_score[c]
+        if not corrupted and len(open_stack) > 0:
+            p2_scores.append(0)
+            while len(open_stack) > 0:
+                c = open_stack.pop()
+                p2_scores[-1] *= 5
+                p2_scores[-1] += complete_score[c]
 
     return p1_ans, sorted(p2_scores)[len(p2_scores) // 2]
+
 
 if __name__ == '__main__':
     t1 = time.time()
