@@ -85,7 +85,7 @@ if __name__ == '__main__':
     p1_ans, p2_ans = main()
     t2 = time.time()
 
-    print(f"P1: {p1_ans}")  # =>
-    print(f"P2: {p2_ans}")  # =>
+    print(f"P1: {p1_ans}")  # => 4573
+    print(f"P2: {p2_ans}")  # => 117509
 
     print(f"Took {t2 - t1}s")
